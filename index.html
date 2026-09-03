@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIVIERA CONCEPT | Verano Europeo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:ital,wght@0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Vinculación del CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- BARRA DE ANUNCIO CON MOVIMIENTO CONTINUO (MARQUEE) -->
+    <div class="promo-bar">
+        <div class="marquee-content">
+            <span>☀️ ENVIOS GRATIS EN RAMALLO Y VILLA RAMALLO ☀️ - ENVIOS A TODO EL PAIS</span>
+            <span>☀️ ENVIOS GRATIS EN RAMALLO Y VILLA RAMALLO ☀️ - ENVIOS A TODO EL PAIS</span>
+            <span>☀️ ENVIOS GRATIS EN RAMALLO Y VILLA RAMALLO ☀️ - ENVIOS A TODO EL PAIS</span>
+        </div>
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <span class="brand-sub">COLECCIÓN DE VERANO</span>
+                <span class="logo">MAGNETICA</span>
+                <span class="brand-loc">AMALFI • IBIZA • SAINT-TROPEZ</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#" class="active" data-filter="all">Todos los artículos</a></li>
+                <li><a href="#" data-filter="tops">Tops</a></li>
+                <li><a href="#" data-filter="blusas">Blusas</a></li>
+                <li><a href="#" data-filter="remeras">Remeras</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                
+                <div class="cart-icon-container" id="cart-trigger">
+                    <img src="icons8-carrito-de-compras.gif" alt="Carrito" class="nav-icon-img" title="Carrito">
+                    <span class="cart-count" id="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER SUN-DRENCHED -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-sub">Evasión Mediterránea</span>
+            <h1>IL DOLCE FAR NIENTE</h1>
+            <p>Prendas de lino premium y tejidos suaves inspirados en los veranos de la Costa Azul y la Riviera Italiana.</p>
+            <button class="btn-primary" onclick="document.getElementById('collection').scrollIntoView({behavior: 'smooth'})">Explorar Colección</button>
+        </div>
+    </section>
+
+    <!-- BANNER DE MANIFIESTO VERANIEGO -->
+    <section class="summer-manifesto">
+        <p class="manifesto-text">
+            <em>"Bajo el sol de Capri, tardes eternas de aperitivo en Venezia, y paseos en yate por Mónaco... Un armario atemporal diseñado para capturar la luz del verano europeo."</em>
+        </p>
+    </section>
+
+    <!-- FILTROS DE CATEGORÍA INTERACTIVOS -->
+    <section class="filters-container" id="collection">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos los artículos</button>
+            <button class="filter-btn" data-filter="tops">Tops</button>
+            <button class="filter-btn" data-filter="blusas">Blusas</button>
+            <button class="filter-btn" data-filter="remeras">Remeras</button>
+        </div>
+    </section>
+
+    <!-- REJILLA DE PRODUCTOS -->
+    <main class="products-section">
+        <div class="product-grid" id="product-grid">
+
+            <!-- PRODUCTO 1: TOP CAPRI (3 IMÁGENES) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Top_capri.jpg" alt="Top Capri 1">
+                        <img class="slide-img" src="Top_capri2.jpg" alt="Top Capri 2">
+                        <img class="slide-img" src="Top_capri3.jpg" alt="Top Capri 3">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente">&#10095;</button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🍋 Capri, Italia</span>
+                    <h3 class="product-name">Top Capri</h3>
+                    <p class="product-desc">Sofisticado top corset de gamuza sintética negra con un diseño estructurado de escote profundo y cierre metálico frontal.</p>
+                    <span class="product-price">$21.000</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="M">M</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-capri" data-name="Top Capri" data-price="29.00" data-img="Top_capri.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 2: TOP MONACO (2 IMÁGENES) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Top_monaco.jpg" alt="Top Monaco 1">
+                        <img class="slide-img" src="Top_monaco2.jpg" alt="Top Monaco 2">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente">&#10095;</button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🛥️ Monte Carlo, Mónaco</span>
+                    <h3 class="product-name">Top Monaco</h3>
+                    <p class="product-desc">Delicado top lencero acanalado en negro profundo con sutil encaje en el escote recto y finos breteles.</p>
+                    <span class="product-price">$21.000</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-monaco" data-name="Top Monaco" data-price="34.00" data-img="Top_monaco.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 3: TOP SAINT-MALO (2 IMÁGENES) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Top_saint_malo.jpg" alt="Top Saint Malo 1">
+                        <img class="slide-img" src="Top_saint_malo2.jpg" alt="Top Saint Malo 2">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente">&#10095;</button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🏰 Saint-Malo, Francia</span>
+                    <h3 class="product-name">Top Saint-Malo</h3>
+                    <p class="product-desc">Remera crop de punto acanalado elástico en color azul marino con un favorecedor escote cruzado en V.</p>
+                    <span class="product-price">$11.000</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Azul">Azul</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="M">M</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-saint-malo" data-name="Top Saint-Malo" data-price="32.00" data-img="Top_saint_malo.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 4: TOP VENECIA (2 IMÁGENES) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Top_venecia.jpg" alt="Top Venecia 1">
+                        <img class="slide-img" src="Top_venecia2.jpg" alt="Top Venecia 2">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente">&#10095;</button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🛶 Venezia, Italia</span>
+                    <h3 class="product-name">Top Venecia</h3>
+                    <p class="product-desc">Musculosa de morley premium negro con elegante cuello halter cerrado y hombros totalmente descubiertos.</p>
+                    <span class="product-price">$14.550</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-venecia" data-name="Top Venecia" data-price="28.00" data-img="Top_venecia.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 5: TOP PRADA (2 IMÁGENES) -->
+            <div class="product-card" data-category="remeras">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Remera_prada.jpg" alt="Top Prada 1">
+                        <img class="slide-img" src="Top_prada2.jpg" alt="Top Prada 2">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente">&#10095;</button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🇮🇹 Milán, Italia</span>
+                    <h3 class="product-name">Top Prada</h3>
+                    <p class="product-desc">Remera estilo baby tee de algodón elástico blanco con cuello alto y mangas raglán en negro contraste.</p>
+                    <span class="product-price">$16.100</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="Único">Único</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-prada" data-name="Top Prada" data-price="38.00" data-img="Remera_prada.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 6: TOP IBIZA (1 IMAGEN) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Top_Ibiza.jpg" alt="Top Ibiza">
+                    </div>
+                    
+                    <!-- Controles inactivos pero presentes para JS -->
+                    <button class="slider-arrow prev-btn" aria-label="Anterior" style="display: none;">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente" style="display: none;">&#10095;</button>
+                    <div class="slider-dots" style="display: none;">
+                        <span class="dot active"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🐚 Ibiza, España</span>
+                    <h3 class="product-name">Top Ibiza</h3>
+                    <p class="product-desc">Precioso cárdigan corto y abierto de encaje floral calado negro con mangas y bajo de volantes peplum.</p>
+                    <span class="product-price">$13.000</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="Único">Único</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-ibiza" data-name="Top Ibiza" data-price="30.00" data-img="Top_Ibiza.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 7: TOP MALLORCA (3 IMÁGENES) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Top_mallorca.jpg" alt="Top Mallorca 1">
+                        <img class="slide-img" src="top_mallorca2.jpg" alt="Top Mallorca 2">
+                        <img class="slide-img" src="top_mallorca3.jpg" alt="Top Mallorca 3">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente">&#10095;</button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🏖️ Islas Baleares, España</span>
+                    <h3 class="product-name">Top Mallorca</h3>
+                    <p class="product-desc">Top básico entallado en tejido de morley negro de alta calidad con cuello recto y tiras finas.</p>
+                    <span class="product-price">$15.800</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn" data-color="Blanco">Blanco</button>
+                            <button class="color-btn active" data-color="Negro">Negro</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn active" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-mallorca" data-name="Top Mallorca" data-price="30.00" data-img="Top_mallorca.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 8: TOP MYKONOS (1 IMAGEN) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Top_mykonos.jpg" alt="Top Mykonos">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior" style="display: none;">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente" style="display: none;">&#10095;</button>
+                    <div class="slider-dots" style="display: none;">
+                        <span class="dot active"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🇬🇷 Mykonos, Grecia</span>
+                    <h3 class="product-name">Top Mykonos</h3>
+                    <p class="product-desc">Top minimalista de lycra satinada negra con escote recto y finas tiras dobles cruzadas en la espalda abierta.</p>
+                    <span class="product-price">$15.500</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="Único">Único</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-mykonos" data-name="Top Mykonos" data-price="32.00" data-img="Top_mykonos.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 9: CORSET ARUBA (1 IMAGEN) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="corset_aruba.jpg" alt="Corset Aruba">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior" style="display: none;">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente" style="display: none;">&#10095;</button>
+                    <div class="slider-dots" style="display: none;">
+                        <span class="dot active"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🌴 Aruba, Antillas</span>
+                    <h3 class="product-name">Corset Aruba</h3>
+                    <p class="product-desc">Corset strapless estructurado en bengalina negra con costuras de talle vertical y ajuste entallado perfecto.</p>
+                    <span class="product-price">$18.000</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="corset-aruba" data-name="Corset Aruba" data-price="36.00" data-img="corset_aruba.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 10: REMERA WESTSIDE (1 IMAGEN) -->
+            <div class="product-card" data-category="remeras">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="remera_westside.jpg" alt="Remera Westside">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior" style="display: none;">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente" style="display: none;">&#10095;</button>
+                    <div class="slider-dots" style="display: none;">
+                        <span class="dot active"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🛹 Biarritz, Francia</span>
+                    <h3 class="product-name">Remera Westside</h3>
+                    <p class="product-desc">Remera de morley negro sin mangas y estilo muscle tee con letras blancas de "WESTSIDE" bordadas en el pecho.</p>
+                    <span class="product-price">$19.500</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="remera-westside" data-name="Remera Westside" data-price="26.00" data-img="remera_westside.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+                        <!-- PRODUCTO 11: TOP SANTORINI (2 IMÁGENES) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="top_santorini.jpg" alt="Top Santorini 1">
+                        <img class="slide-img" src="top_santorini2.jpg" alt="Top Santorini 2">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente">&#10095;</button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🌋 Santorini, Grecia</span>
+                    <h3 class="product-name">Top Santorini</h3>
+                    <p class="product-desc">Top halter súper fresco en morley acanalado premium. Disponible en negro y en blanco para combinar con tus looks veraniegos.</p>
+                    <span class="product-price">$15.500</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Negro">Negro</button>
+                            <button class="color-btn" data-color="Blanco">Blanco</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-santorini" data-name="Top Santorini" data-price="31.00" data-img="top_santorini.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+            <!-- PRODUCTO 12: BLUSA MIAMI (1 IMAGEN) -->
+            <div class="product-card" data-category="blusas">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="blusa_miami.jpg" alt="Blusa Miami">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior" style="display: none;">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente" style="display: none;">&#10095;</button>
+                    <div class="slider-dots" style="display: none;">
+                        <span class="dot active"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">☀️ Miami, Florida</span>
+                    <h3 class="product-name">Blusa Miami</h3>
+                    <p class="product-desc">Set de musculosas lenceras básicas de morley con escote en V y finos detalles de puntilla de encaje en el pecho.</p>
+                    <span class="product-price">$22.000</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="Único">Único</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="blusa-miami" data-name="Blusa Miami" data-price="24.00" data-img="blusa_miami.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 13: CHOMBA RIO (1 IMAGEN) -->
+            <div class="product-card" data-category="remeras">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="Chomba_rio.jpg" alt="Chomba Río">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior" style="display: none;">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente" style="display: none;">&#10095;</button>
+                    <div class="slider-dots" style="display: none;">
+                        <span class="dot active"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">🇧🇷 Río de Janeiro, Brasil</span>
+                    <h3 class="product-name">Chomba Río</h3>
+                    <p class="product-desc">Chomba de punto acanalado color crema con cuello polo, manga corta y botones frontales al tono.</p>
+                    <span class="product-price">$13.000</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="Único">Único</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="chomba-rio" data-name="Chomba Río" data-price="32.00" data-img="Chomba_rio.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+
+
+        
+            <!-- PRODUCTO 14: TOP PALERMO (2 IMÁGENES) -->
+            <div class="product-card" data-category="tops">
+                <div class="slider-container">
+                    <div class="slides-wrapper">
+                        <img class="slide-img" src="95798472-545d-4366-b1a5-30c92e113048.jpg" alt="Top Palermo Front">
+                        <img class="slide-img" src="ede514a2-afd6-4ce3-accc-7d9713a0988f.jpg" alt="Top Palermo Back">
+                    </div>
+                    
+                    <button class="slider-arrow prev-btn" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-arrow next-btn" aria-label="Siguiente">&#10095;</button>
+                    
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <span class="product-location">☀️ Palermo, Italia</span>
+                    <h3 class="product-name">Top Palermo</h3>
+                    <p class="product-desc">Musculosa de morley premium negro con un diseño superpuesto de tirantes dobles sobre base blanca. Un look súper en tendencia, canchero y ultra fresco.</p>
+                    <span class="product-price">$14.500</span>
+                    
+                    <div class="color-selector">
+                        <span>Color:</span>
+                        <div class="colors">
+                            <button class="color-btn active" data-color="Único">Único</button>
+                        </div>
+                    </div>
+                    <div class="size-selector">
+                        <span>Talla:</span>
+                        <div class="sizes">
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn active" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-add-cart" data-id="top-palermo" data-name="Top Palermo" data-price="28.00" data-img="95798472-545d-4366-b1a5-30c92e113048.jpg">
+                        Añadir a la Bolsa
+                    </button>
+                </div>
+            </div>
+</div>
+    </main>
+
+    
+
+    <!-- BAGGAGE / CARRITO DESLIZANTE -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Tu Maleta de Viaje</h3>
+            <button class="close-cart-btn" id="cart-close">×</button>
+        </div>
+        
+        <!-- Cuerpo del carrito -->
+        <div class="cart-body" id="cart-items-container">
+            <!-- Mensaje carrito vacío -->
+            <div class="empty-cart-message">
+                <p>Tu maleta está vacía en este momento.</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">¡Añade tus favoritos para el verano europeo!</p>
+                <button class="btn-primary" style="margin-top: 20px; padding: 10px 20px;" onclick="document.getElementById('cart-close').click();">Empezar a Explorar</button>
+            </div>
+        </div>
+        
+        <!-- Pie del carrito con totales -->
+        <div class="cart-footer">
+            <div class="cart-summary-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="cart-summary-row promo">
+                <span>Envío:</span>
+                <span id="cart-shipping">Gratis en zona local</span>
+            </div>
+            <button class="btn-checkout" id="checkout-btn">Finalizar Compra por WhatsApp 💬</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Ayuda & Soporte</a>
+            <a href="#">Envíos & Devoluciones</a>
+            <a href="#">Nuestra Historia de Lino</a>
+            <a href="#">Contacto</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 RIVIERA CONCEPT. Hecho con amor pensando en el sol eterno.</p>
+    </footer>
+
+    <!-- Vinculación del JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
