@@ -412,4 +412,99 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(whatsappUrl, '_blank');
         });
     }
+/* ==========================================
+       6. SISTEMA DE LIGHTBOX (VISTA AMPLIADA DE PRODUCTOS)
+       ========================================== */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    const lightboxDotsContainer = document.getElementById('lightbox-dots');
+
+    let lightboxImages = [];
+    let lightboxCurrentIndex = 0;
+
+    // Agregar cursor zoom-in y evento click a todas las imágenes de los carruseles
+    document.querySelectorAll('.slide-img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+            const card = img.closest('.product-card');
+            const productImgs = card.querySelectorAll('.slide-img');
+            lightboxImages = Array.from(productImgs).map(i => i.src);
+            lightboxCurrentIndex = lightboxImages.indexOf(img.src);
+            openLightbox();
+        });
+    });
+
+    function openLightbox() {
+        if (lightboxImages.length === 0) return;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        updateLightbox();
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+        lightboxImg.src = lightboxImages[lightboxCurrentIndex];
+        
+        if (lightboxImages.length > 1) {
+            lightboxPrev.style.display = 'block';
+            lightboxNext.style.display = 'block';
+            
+            lightboxDotsContainer.innerHTML = '';
+            lightboxImages.forEach((_, idx) => {
+                const dot = document.createElement('span');
+                dot.classList.add('lightbox-dot');
+                if (idx === lightboxCurrentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    lightboxCurrentIndex = idx;
+                    updateLightbox();
+                });
+                lightboxDotsContainer.appendChild(dot);
+            });
+        } else {
+            lightboxPrev.style.display = 'none';
+            lightboxNext.style.display = 'none';
+            lightboxDotsContainer.innerHTML = '';
+        }
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target === document.querySelector('.lightbox-content')) {
+            closeLightbox();
+        }
+    });
+
+    lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lightboxCurrentIndex = (lightboxCurrentIndex > 0) ? lightboxCurrentIndex - 1 : lightboxImages.length - 1;
+        updateLightbox();
+    });
+
+    lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lightboxCurrentIndex = (lightboxCurrentIndex < lightboxImages.length - 1) ? lightboxCurrentIndex + 1 : 0;
+        updateLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft' && lightboxImages.length > 1) {
+            lightboxCurrentIndex = (lightboxCurrentIndex > 0) ? lightboxCurrentIndex - 1 : lightboxImages.length - 1;
+            updateLightbox();
+        }
+        if (e.key === 'ArrowRight' && lightboxImages.length > 1) {
+            lightboxCurrentIndex = (lightboxCurrentIndex < lightboxImages.length - 1) ? lightboxCurrentIndex + 1 : 0;
+            updateLightbox();
+        }
+    });
+
 });
