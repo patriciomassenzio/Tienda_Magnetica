@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             cartBadge.textContent = '0';
-            cartSubtotal.textContent = '$0.00 USD';
+            cartSubtotal.textContent = '$0.00 Pesos';
             return;
         }
 
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="cart-item-details">
                         <span class="cart-item-name">${item.name}</span>
                         <span class="cart-item-meta">Talla: ${item.size} | Color: ${item.color}</span>
-                        <span class="cart-item-price">$${item.price.toFixed(2)} USD</span>
+                        <span class="cart-item-price">$${item.price.toFixed(2)} Pesos</span>
                         <div class="cart-item-quantity">
                             <button class="qty-btn dec-qty" data-index="${index}">-</button>
                             <span class="qty-val">${item.quantity}</span>
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Actualizar badge y subtotal
         cartBadge.textContent = totalItems;
-        cartSubtotal.textContent = `$${total.toFixed(2)} USD`;
+        cartSubtotal.textContent = `$${total.toFixed(2)} Pesos`;
 
         // Añadir eventos a los botones de control de cantidad dentro del carrito
         attachCartEvents();
@@ -389,11 +389,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 message += `   • Talle: *${item.size}*\n`;
                 message += `   • Color: *${item.color}*\n`;
                 message += `   • Cantidad: *${item.quantity}*\n`;
-                message += `   • Subtotal: *$${itemTotal.toFixed(2)} USD*\n\n`;
+                message += `   • Subtotal: *$${itemTotal.toFixed(2)} Pesos*\n\n`;
             });
 
             message += '------------------------------------\n';
-            message += `💰 *Monto Total a Pagar:* *$${grandTotal.toFixed(2)} USD*\n\n`;
+            message += `💰 *Monto Total a Pagar:* *$${grandTotal.toFixed(2)} Pesos*\n\n`;
             message += '📍 *Método de Pago elegido:* Efectivo / Transferencia\n';
             message += '💬 ¡Quedo a la espera para coordinar el pago y el envío en la zona de Ramallo / Villa Ramallo!\n';
 
