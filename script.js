@@ -224,11 +224,18 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const id = button.getAttribute('data-id');
             const name = button.getAttribute('data-name');
-            const price = parseFloat(button.getAttribute('data-price'));
             const img = button.getAttribute('data-img');
             
-            // Obtener talla seleccionada de esta tarjeta
+            // Obtener la tarjeta del producto
             const card = button.closest('.product-card');
+            
+            // Leer el precio directo desde el texto del index (.product-price) en lugar de data-price
+            const priceElement = card.querySelector('.product-price');
+            const priceText = priceElement ? priceElement.textContent : '0';
+            const priceClean = priceText.replace(/[^0-9]/g, ''); // Remueve $, puntos, comas, etc.
+            const price = parseFloat(priceClean) || 0;
+            
+            // Obtener talla seleccionada de esta tarjeta
             const activeSizeBtn = card.querySelector('.size-btn.active');
             const size = activeSizeBtn ? activeSizeBtn.getAttribute('data-size') : 'M';
 
@@ -284,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             cartBadge.textContent = '0';
-            cartSubtotal.textContent = '$0.00 Pesos';
+            cartSubtotal.textContent = '$0.00 USD';
             return;
         }
 
@@ -302,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="cart-item-details">
                         <span class="cart-item-name">${item.name}</span>
                         <span class="cart-item-meta">Talla: ${item.size} | Color: ${item.color}</span>
-                        <span class="cart-item-price">$${item.price.toFixed(2)} Pesos</span>
+                        <span class="cart-item-price">$${item.price.toLocaleString('es-AR')} Pesos</span>
                         <div class="cart-item-quantity">
                             <button class="qty-btn dec-qty" data-index="${index}">-</button>
                             <span class="qty-val">${item.quantity}</span>
@@ -317,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Actualizar badge y subtotal
         cartBadge.textContent = totalItems;
-        cartSubtotal.textContent = `$${total.toFixed(2)} Pesos`;
+        cartSubtotal.textContent = `$${total.toLocaleString('es-AR')} Pesos`;
 
         // Añadir eventos a los botones de control de cantidad dentro del carrito
         attachCartEvents();
@@ -373,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Número de WhatsApp (puedes cambiarlo por tu número real con código de país, ej: 549...)
             // 54 es el código de Argentina, 9 es para celular, seguido del código de área (ej: 3407) y número de Ramallo
-            const whatsappPhone = '3407431964'; // Reemplazar con su número de WhatsApp real de atención al cliente
+            const whatsappPhone = '5493407412345'; // Reemplazar con su número de WhatsApp real de atención al cliente
 
             // Construir el mensaje elegante
             let message = '¡Hola! ☀️ Vengo de la tienda online *Riviera Concept* y me gustaría realizar el siguiente pedido:\n\n';
@@ -389,11 +396,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 message += `   • Talle: *${item.size}*\n`;
                 message += `   • Color: *${item.color}*\n`;
                 message += `   • Cantidad: *${item.quantity}*\n`;
-                message += `   • Subtotal: *$${itemTotal.toFixed(2)} Pesos*\n\n`;
+                message += `   • Subtotal: *$${itemTotal.toLocaleString('es-AR')} Pesos*\n\n`;
             });
 
             message += '------------------------------------\n';
-            message += `💰 *Monto Total a Pagar:* *$${grandTotal.toFixed(2)} Pesos*\n\n`;
+            message += `💰 *Monto Total a Pagar:* *$${grandTotal.toLocaleString('es-AR')} Pesos*\n\n`;
             message += '📍 *Método de Pago elegido:* Efectivo / Transferencia\n';
             message += '💬 ¡Quedo a la espera para coordinar el pago y el envío en la zona de Ramallo / Villa Ramallo!\n';
 
