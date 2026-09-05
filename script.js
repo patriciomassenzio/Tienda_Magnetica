@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = btn.closest('.product-card');
             const isMallorca = card.querySelector('.product-name').textContent.includes('Mallorca');
             if (isMallorca) {
-                const color = btn.getAttribute('data-color');
+                  const color = btn.getAttribute('data-color') || btn.textContent.trim();
                 const sizeSelector = card.querySelector('.size-selector');
                 const sizeButtons = sizeSelector.querySelectorAll('.size-btn');
                 
@@ -235,13 +235,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const priceClean = priceText.replace(/[^0-9]/g, ''); // Remueve $, puntos, comas, etc.
             const price = parseFloat(priceClean) || 0;
             
-            // Obtener talla seleccionada de esta tarjeta
+                // Obtener talla seleccionada de esta tarjeta
             const activeSizeBtn = card.querySelector('.size-btn.active');
-            const size = activeSizeBtn ? activeSizeBtn.getAttribute('data-size') : 'M';
+            const size = activeSizeBtn ? activeSizeBtn.textContent.trim() : 'M';
 
             // Obtener color seleccionado de esta tarjeta
             const activeColorBtn = card.querySelector('.color-btn.active');
-            const color = activeColorBtn ? activeColorBtn.getAttribute('data-color') : 'Único';
+            const color = activeColorBtn ? activeColorBtn.textContent.trim() : 'Único';
 
             // Agregar a la maleta
             addToCart(id, name, price, img, size, color);
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const whatsappPhone = '3407439674'; // Reemplazar con su número de WhatsApp real de atención al cliente
 
             // Construir el mensaje elegante
-            let message = '¡Hola! ☀️ Vengo de la tienda online *Riviera Concept* y me gustaría realizar el siguiente pedido:\n\n';
+            let message = '¡Hola! ☀️ Vengo de la tienda online *Magnetica* y me gustaría realizar el siguiente pedido:\n\n';
             message += '🛒 *DETALLE DEL PEDIDO:*\n';
             message += '------------------------------------\n';
 
