@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Número de WhatsApp (puedes cambiarlo por tu número real con código de país, ej: 549...)
             // 54 es el código de Argentina, 9 es para celular, seguido del código de área (ej: 3407) y número de Ramallo
-            const whatsappPhone = '5493407412345'; // Reemplazar con su número de WhatsApp real de atención al cliente
+            const whatsappPhone = '3407439674'; // Reemplazar con su número de WhatsApp real de atención al cliente
 
             // Construir el mensaje elegante
             let message = '¡Hola! ☀️ Vengo de la tienda online *Riviera Concept* y me gustaría realizar el siguiente pedido:\n\n';
